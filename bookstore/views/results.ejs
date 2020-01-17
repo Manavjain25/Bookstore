@@ -1,0 +1,72 @@
+<% include partials/header %>
+
+<!-- <script async src="/app1.js"></script>  -->
+<style>
+  body{
+  background-image: linear-gradient(whitesmoke,lightblue, lightgreen);
+}
+.display-image{
+  height: auto;
+  width:auto;
+}
+
+</style>
+<script  >
+   function myfunction(i) {
+
+  console.log(i);
+  var n = document.images.item(i).src;
+  console.log(n)
+  var el = document.querySelectorAll("#demo");
+  console.log(el[i].innerText)
+  var fl = document.querySelectorAll("#demo1");
+  console.log(fl[i].innerText)
+  var newdata ={img :n ,title:el[i].innerText,price:fl[i].innerText}
+   console.log (newdata);
+  
+    fetch("/cart", {
+    method: 'post',
+    headers: {
+      "Content-type": "application/json"
+    },
+    body:JSON.stringify(newdata)
+  })
+  .then(function (data) {
+  });
+}
+</script>
+<br><br>
+
+       <div class="row" style="z-index: -1;" >
+       <% for (i=0;i<10;i++)   {%>
+         <div class="col-lg-3 col-sm-6" style="padding-bottom: 40px">
+         <div class="well "> 
+        <div class="row"><label class="book-compress col-sm-10" id="demo"><label>Title : </label><%=data["items"][i]["volumeInfo"]["title"]%></label></div>
+         <div class="row"><label class="row book-compress col-sm-10">Author :<%=data["items"][i]["volumeInfo"]["authors"]%></label></div>
+         <div class="row"><label class="row book-compress col-sm-10">Publisher :<%=data["items"][i]["volumeInfo"]["publisher"]%></label></div>
+         <% if(data.items[i].saleInfo.listPrice) { %>
+         <div class="row">
+         <label class="book-compress col-sm-5">Price :<label><s><%= data.items[i].saleInfo.listPrice.amount  %></s></label></label>
+         <label class="book-compress col-sm-5" id="demo1"><%= data.items[i].saleInfo.retailPrice.amount  %></label>          
+         </div> 
+         <% } %>
+
+          <% if(!data.items[i].saleInfo.listPrice) { %>
+          <div class="row"><label class="book-compress col-sm-6">Price : Price Not Available</label></div>
+          <% } %> 
+          <!-- <strong><%=data["items"][i]["volumeInfo"]["description"]%></strong> -->
+          <!-- <div class="img-thumbnail "> -->
+          <div class="row display-image">
+          <img  class="image-compress  img-thumbnail" src="<%=data.items[i].volumeInfo.imageLinks.thumbnail %>">
+          </div>    
+          <div class="row"> 
+          <a href="<%= data.items[i].volumeInfo.infoLink %>"><button class="button-compress btn btn-sm btn-info col-sm-4"> Read More</button></a>
+          <form action="/cart"   method="POST" >
+          <input type="submit" class="button-compress btn btn-sm btn-primary col-sm-4"  onclick=" myfunction('<%= i %>')"  name="submit"    value="Add to my Cart" >
+          </form>
+          </div>
+          </div>
+        </div>
+       <%  } %>
+       </div>
+<% include partials/footer %>

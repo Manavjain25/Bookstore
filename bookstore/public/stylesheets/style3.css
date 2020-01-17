@@ -1,0 +1,265 @@
+.item{
+    height:500px
+}
+
+.item img {
+    width: 100% ;
+    height:100%
+}
+/* 
+.navbar {
+    min-height: 65px
+} */
+
+/* .nav>li>a{
+    padding-top: 20px;
+    padding-right: 30px;
+    font-size: 23px
+}
+
+.navbar-right>li{
+    padding-top:15px;
+
+} */
+/* .navbar-right>li>a{
+    padding-top:10px;
+    margin-left:60px
+}
+.navbar-header>a{
+    padding-top:20px;
+    font-size: 25px;
+    padding-right:20px;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left: -180px;
+} */
+
+
+
+footer {
+    background: #f0f0f0;
+    padding: 80px 0 0;
+    width: 100%;
+    float: left; }
+    footer h4 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: 300; }
+    footer .address {
+      margin-bottom: 50px; }
+      footer .address h6 {
+        color: #464646;
+        line-height: 20px;
+        margin-bottom: 20px;
+        font-weight: 300;
+        padding-right: 50px;
+        line-height: 24px; }
+    footer .timing h6 {
+      color: #464646;
+      font-size: 14px;
+      margin-bottom: 10px;
+      font-weight: 300; }
+    footer ul li {
+      margin-bottom: 5px;
+      list-style: none; }
+      footer ul li a {
+        color: #464646;
+        font-size: 12px; }
+    footer .navigation {
+      margin-bottom: 40px; }
+    footer .form h3 {
+      font-size: 24px;
+      margin-bottom: 8px; }
+    footer .form h6 {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px;
+      width: 90%;
+      margin-bottom: 25px; }
+    footer .form input {
+      width: 100%;
+      height: 42px;
+      padding-left: 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      border: 0; }
+    footer .form textarea {
+      width: 100%;
+      resize: none;
+      height: 100px;
+      border: 0;
+      font-size: 14px;
+      padding: 10px;
+      margin-bottom: 10px; }
+    footer .form .btn {
+      font-weight: 300; }
+    footer .copy-right {
+      background: #000;
+      color: #fff;
+      padding: 25px 0;
+      margin-top: 60px; }
+      footer .copy-right h5 {
+        font-size: 14px;
+        font-weight: 300; }
+      footer .copy-right .row {
+        align-items: center; }
+      footer .copy-right .share {
+        text-align: right; }
+        footer .copy-right .share span {
+          padding: 0 5px;
+          cursor: pointer; }
+          footer .copy-right .share span:last-child {
+            padding-right: 0; }
+          footer .copy-right .share span:hover {
+            color: #ff9700; }
+  
+  @media only screen and (max-width: 480px) {
+    footer .timing {
+      margin-bottom: 40px; }
+  
+    footer {
+      padding: 60px 0 0; }
+  
+    footer .copy-right .share {
+      text-align: left; }
+  
+    footer .copy-right .share {
+      text-align: left;
+      margin-top: 10px; } }
+  
+
+      .oldbook{
+        width:80%;
+        font-weight: bold;
+      }
+
+      .image-upload>input{
+        display:none;
+
+      }
+
+      .image-compress{
+        height: 150px;
+        width:120px;
+        align-self: center;
+        border-color:black;
+        border-width: 2px;
+        margin-left: 90px;
+      }
+      .book-compress{
+        color:#555;
+        font-weight: bold;
+        font-family: Arial,Georgia,'Times New Roman',;  
+        padding: 4px;
+        margin-left: 10px;
+        margin-right: 10px;      
+      }
+      .button-compress{
+        margin:20px;
+      }
+      .well{
+      height: 500px;
+      width:auto;
+      border-color: green;
+      }
+
+      .display{
+        display: none;
+      }
+
+      .cover{
+        opacity: 0.6;
+        z-index: 2;
+      }
+      .text-block{
+        z-index: 4;
+        position: absolute;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        color:white;
+        transform: translate(-50%,-50%);
+        top: 47.5%;
+        left: 35%;  
+        align-items: center;
+      }
+      .distance{
+        border-color:yellow;
+        border-width: 4px;
+      }
+
+      .badge{
+        background-color: rgba(3, 214, 241, 0.883)
+      }
+      .ma{
+        margin-top: 10px;
+
+      }
+      .form-font{
+        color:grey;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .TC{
+        overflow: scroll;
+      }
+     
+       .navbar{
+        opacity: 0.9;
+      }
+
+      .well-sell{
+        height: auto;
+        width:auto;
+      }
+
+
+      .sidenav {
+        height: 100%; /* 100% Full-height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 40px;
+        right: 0;
+        background-color: #111; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+      }
+      
+      /* The navigation menu links */
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      /* When you mouse over the navigation links, change their color */
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      
+      /* Position and style the close button (top right corner) */
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      
+      /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+      #main {
+        transition: margin-left .5s;
+        padding: 20px;
+      }
+      
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }

@@ -1,0 +1,111 @@
+<% include partials/header %>
+<style>
+    body{
+        background-image: linear-gradient(whitesmoke,lightblue, lightgreen);
+    }
+</style>
+<body>
+<br>
+<br>
+<br>
+<div class="container">
+    <h2>Sell Books</h2>
+    <hr style="width: 13%;border-color: orangered;float:left;border-width: 3px; margin-top: 5px;">
+</div>
+<div class="container">    
+<div class="well well-sell">  
+<form action="/sell" method="POST">  
+<h4 style="color:#555;font-weight: bold;">Please fill all the details inorder to sell your Book</h4> 
+<br> 
+<div class="form-group">
+<input type="text" class="form-control form-font" placeholder="Enter Book Name" name="BookName">
+</div>
+<div class="form-group">
+<input type="text" class="form-control form-font" placeholder="Enter Book Price" name="BookPrice">
+</div>
+<div class="form-group">
+<label for="file-upload" class="custom-file-upload form-font" style="color:grey">
+<i class="fa fa-fw fa-camera"></i> Upload Image
+</label>
+<input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
+</div>
+<div class="form-group">
+<textarea class="form-control form-font" rows="5" name="BookDetails" placeholder="Enter BookDetails"></textarea>
+</div>
+<div class="form-group">
+<input type="text" class="form-control form-font" placeholder="Enter Phone No" name="Phoneno">
+</div>
+<div class="form-group">
+
+<textarea class="form-control form-font" rows="3" name="Terms & Conditions">
+
+         We hope that the ordering process is pretty straight forward so these T and Cs should be fairly standard. If you have any questions about any aspect of this website, please contact us.
+        All correspondence will be treated in the strictest confidence. Any complaint or query will be dealt with promptly as follows:
+        we will acknowledge correspondence within 5 working days
+        we will aim to resolve all issues within 2 weeks from initial date of communication.
+        we will keep you fully informed during this process
+        Statutory Rights
+        Please note, the following Terms and Conditions do not affect your statutory rights as a consumer, as required by the Which? Web Traders Code of Practice.
+        Order information
+        We display all prices for the books, delivery, and other services clearly on the website. If, by mistake, we have under-priced a book we are not liable to sell you the book at that price (provided we have not already informed you that the title is available).
+        Subject to errors, all the information and prices on this website are correct at time of order. If we need to change the cost of your order, we will contact you by email to confirm that you want to continue. You can, of course, cancel the order if you wish.
+        
+        Limitations
+        This website must not be used for any other purpose than searching for a book or placing an order with us.
+        It must not be used for any transmitting of illegal or objectionable material, the breaching of any laws including copyright and unauthorised access or disrupting the network or website or causing interference and enjoyment of the site for other users.
+        
+        Payment & Security
+         Unless by prior arrangement, no goods will be transferred until paid for in full.
+        
+        PaypalPayPal is designed from the ground up to be a safer way to send money online. PayPal doesn’t expose or sell your financial information to merchants. You can pay with your debit or credit card through Paypal's secure payment gateway.
+        
+        Rapid SSL ProtectionThe Big Green Bookshop takes security seriously. We use the latest SSL (Secure Sockets Layer) software encryption technology. This means that information passed between your computer and our Web site cannot be accessed by anybody other than us. Even if anybody could access this data it would be corrupted and appear illegible. Your name and address will be held on the servers but your payment card details will not. Once payment card details have been validated and approved these will be deleted. Although this means that you will need to input your details for each order it only takes a minute and makes it completely safe to order online with us.
+        Look out for the https:// prefix in your browsers URL bar and the closed padlock sign (both visible when entering secured areas of this website eg your account, basket & checkout pages)
+        
+        Cancellation
+        
+        You can cancel your contract at any time up to seven working days after the day of delivery. To do this, please e-mail or write to us. If you cancel you must return the goods to us at your own expense. This cancellation policy does not affect your legal rights – for example, if goods are faulty or misdescribed.
+        
+        Disclaimer
+        
+        We guarantee your satisfaction and will replace or refund any item that does not meet your expectation or is damaged, within 30 days from receipt of goods. We would ask, however, that should you receive damaged goods you contact us, using details in our ABOUT US page, within 24 hours of receipt of goods in order that we can deal with the problem efficiently and effectively with our carrier. We will completely refund the full price of your order and delivery charge if you are not satisfied with the goods you received.
+        We reserve the right not to sell to trade customers for re-sale purposes.
+         Sometimes this website may be unavailable as we perform maintenance work. We aim to minimise such downtime, but cannot guarantee that the site will be available at any given time.
+        
+        To the full extent permitted by law, you agree that neither this company, nor its directors, partners or employees are liable for any damages arising out of use or in connection with the content, information, materials or products of this website.
+        
+        We do not accept any liability for direct or indirect damages, any loss of data, income or profit or damage to property and third party claims, from the use of this site. However we do not limit our liability for death or personal injury, if it arises as a result of our negligence.
+        
+        Acceptance
+        
+        There will be no contract of any kind between you and us unless and until we actually inform you that the goods are available. At any point up until then, we may decline to supply the goods to you without giving any reason. At the moment that we inform you that the goods are available (and not before), a contract will be made between you and us.
+        
+        General
+        
+        These Terms and Conditions shall be governed by and construed in accordance with the laws of England, Wales or Scotland.
+        
+        If any of these Terms and Conditions is held by any court of competent authority to be unlawful, invalid or unenforceable, in whole or in part, this will not affect the validity of the remaining Terms and Conditions which will continue to be valid and enforceable to the fullest extent permitted by law.
+    
+ </textarea>
+</div>
+<label class="form-font"><input type="checkbox" name="BookCheckbox" required> I agree to the above Terms & Conditions</label>
+
+<div class="form-group">
+<input type="submit" class="btn btn-danger" name="submit" value="Submit" >
+</div><br><br>
+</form>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+  $('#file-upload').change(function() {
+  var i = $(this).prev('label').clone();
+  var file = $('#file-upload')[0].files[0].name;
+  $(this).prev('label').text(file);
+});
+
+
+</script>
+</html>
+
+<% include partials/footer %>

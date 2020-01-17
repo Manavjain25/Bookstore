@@ -1,0 +1,51 @@
+<% include partials/header %>
+<style>
+    body{
+        background-image: linear-gradient(whitesmoke,lightblue, lightgreen);
+    }
+</style>
+
+<div class="container">
+<br>
+<br>
+<label>Fill Following Details for Selling Your Book</label>
+<form action="/oldbook" method="POST">
+<div class="form-group">
+<input type="text" class="form-control oldbook" name="price" placeholder="Enter Price">
+</div>
+<div class="form-group">
+<input type="text" class="form-control oldbook" name="bookname" placeholder="Enter Book Name">
+</div>
+
+<div class="form-group image-upload">
+    <label for="file-input">
+    <a>
+     Upload Image   
+    <i class="fa fa-camera" aria-hidden="true"></i>
+    </label>
+    </a>
+<input type="file" id="file-input" class="form-control oldbook" name="bookimage" placeholder="Enter Book Image">
+</div>        
+<div class="form-group">
+<input type="submit" class="form-control btn btn-danger oldbook" name="booksubmit" placeholder="Submit">
+</div>        
+</form>
+</div>
+
+
+
+
+
+
+
+
+ <img src="<%= result[0].bookimg %>" width="150px" height="150px">
+
+
+
+
+
+
+
+
+<% include partials/footer %>

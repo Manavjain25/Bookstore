@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Make site responsive on mobile/tablet -->
+       <meta name="viewport"  content="width=device-width, initial-scale=1">
+        <title>Demo App</title>
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel ="stylesheet" href="/stylesheets/style3.css">
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+      
+        <style>
+        @media(max-width:991px){
+        .navbar-toggle{display:block;}
+        .collapse{display:none;}
+        }
+        </style>
+              
+    </head>
+     <body>
+<script>
+  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginRight = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginRight = "0";
+}
+</script>
+
+    
+<nav class="navbar  navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">{pages}</a>
+          </div>
+          <ul class="nav navbar-nav form-font">
+            <li class="active"><a href="home"><i class="fa fa-fw fa-home fa-lg"></i>Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-fw fa-money"></i>Sell<span class="caret"></span></a>
+              <ul class="dropdown-menu" style="z-index: 3;">
+                <li><a href="sell">Sell Old Books</a></li>
+                <li><a href="purchase">Purchase Old Books</a></li>
+              </ul>
+            </li>
+            <li><a href="#section1"><i class="fa fa-fw fa-phone fa-lg"></i> Contact Us</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-gift fa-lg" ></i> Offers</a></li> 
+            <li><a href="cart"><i class="fa fa-fw fa-shopping-cart fa-lg"></i><span class="badge badge-danger" ><%= count %></span> </a></li>
+            <li class="ma"> <form class="form-inline" action="/results" method="GET" >
+                <input class="form-control " type="text" placeholder="Search Book" name="search">
+                        <button class="btn btn-success" type="submit">Search  </button>
+                </form></li>
+        </ul>
+          <ul class="nav navbar-nav navbar-right form-font">
+            <li><a href="#"><i class="fa fa-fw fa-user fa-lg"></i> <span onclick="openNav()">Profile</span></a></li> 
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="#">Signed in as <%= data %></a>
+              <hr>
+              <a href="#">Status</a>
+              <hr>
+              <a href="login">logout</a>
+            </div>                         
+          </ul>
+        </div>
+      </nav>
+         

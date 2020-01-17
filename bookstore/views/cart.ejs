@@ -1,0 +1,215 @@
+<html>
+<head>
+<STYLE>
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+.category_block li:hover {
+    background-color: #007bff;
+}
+.category_block li:hover a {
+    color: #ffffff;
+}
+.category_block li a {
+    color: #343a40;
+}
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+.reviews_product .fa-star {
+    color: gold;
+}
+.pagination {
+    margin-top: 20px;
+}
+footer {
+    background: #343a40;
+    padding: 40px;
+}
+footer a {
+    color: #f8f9fa!important
+}
+</STYLE>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<BODY>
+<script>
+    function myfunction(i){
+        var el = document.querySelectorAll("#demo2");
+        console.log(el[i].innerText)
+        var newdata ={title:el[i].innerText}
+        console.log (newdata);
+       
+        
+    fetch("/cart1",{
+    method: 'post',
+    headers: {
+      "Content-type": "application/json"
+    },
+    body:JSON.stringify(newdata)
+    })
+  .then(function (data) {
+  });
+
+ }
+
+//  var total=document.querySelectorAll("#total");
+//  console.log(total);
+
+function myfunction1(){
+
+var total=document.getElementById("tiny").innerHTML; 
+alert(total);
+// var newdata={price:total.innerText.substring(0,4)}
+var newdata={price:total} 
+fetch("/checkout", {
+    method: 'post',
+    headers: {
+      "Content-type": "application/json"
+    },
+    body:JSON.stringify(newdata)
+    })
+  .then(function (data) {
+  });
+
+}  
+</script>
+
+
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">MY CART</h1>
+     </div>
+</section>
+
+
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Available</th>
+                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col" class="text-right">Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <% var sum=0  %>
+                     
+                        <% for (i=0;i<count;i++)   {%>
+                            <tr>
+                            <td><img src="<%=result[i].img %>"> </td>
+                            <td id="demo2"><%=result[i].title%></td>
+                            <td>In stock</td>
+                            <td><input id="<%=result[i].title%>123" class="form-control" type="number" value="1" onclick="myfunction123('<%= result[i].price %>','<%=result[i].title%>')"/></td>
+                            <td  class="text-right" id="<%= result[i].title %>"><%= result[i].price %> Rs/-</td>
+                            
+                            <% sum= sum+result[i].price %>
+                            <form action="/cart"   method="POST" >
+                            <td class="text-right"><button class="btn btn-sm btn-danger" onclick=" myfunction('<%= i %>')" ><i class="fa fa-trash"></i> </button> </td>
+                            </form>
+                            </tr>
+                      
+                        <%  } %>
+                       
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Sub-Total</td>
+                            <td  class="text-right"><label id="samprass"><%= sum %></label> Rs/-</td> 
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Shipping</td>
+                            <td class="text-right">50 Rs</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td  id="total" class="text-right"><strong id="tiny"><%= sum+50 %></strong> Rs/-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                  <a href="home" class="btn  btn-block btn-light ">Continue Shopping</a>
+                    <!-- <button class="btn btn-block btn-light">Continue Shopping</button> -->
+                </div>
+                <form></form>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <a  href="checkout2" class="btn btn-lg btn-block btn-success text-uppercase" onclick="myfunction1()">Checkout</a>
+                    <!-- <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</BODY>
+</html>
+<script>
+    function myfunction123(k,id){
+        j=id+"123";
+        var qt=document.getElementById(j).value;
+        var total=document.getElementById("samprass").innerHTML;
+        total=total-k;
+        var p=k*qt;
+        total=total+p;
+
+        document.getElementById(id).innerHTML=p+" Rs/-";
+        document.getElementById('samprass').innerHTML=total;
+        document.getElementById('tiny').innerHTML=total+50;
+
+    }
+</script>

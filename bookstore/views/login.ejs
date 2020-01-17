@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/style2.css">
+ 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <style>
+    /* body{
+      background-image: url('bg.jpg');
+        } */
+    
+    img{
+      max-height: 50px;
+    }
+
+    #nameloc1 ,#passwordloc1,#name1,#password1,#email2{
+      color:rgb(255, 5, 5);
+    }
+
+    .margin{
+      margin-bottom: 30px;
+    }
+
+   
+.input:focus {
+  background-color: rgb(202, 132, 46);
+    outline: none !important;
+    border:1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+    </style>
+
+    
+
+</head>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("pwd");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  function MyFunction() {
+    var x = document.getElementById("pwd1");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+function myButtonGroup()
+{
+  var header = document.getElementById("bgroup");
+  var btns = header.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+}
+
+function validate(){  
+var name=document.f1.username.value;  
+var password=document.f1.password.value;  
+var status=false;  
+  
+if(name.length<1){  
+document.getElementById("nameloc").innerHTML=  
+"   <img  src='http://camswork.com/wp-content/uploads/2018/04/wrong.gif '/>"; 
+document.getElementById("nameloc1").innerHTML= "<b>Please Enter your Name</b>";  
+status=false;  
+}else{  
+document.getElementById("nameloc").innerHTML=" <img src='./checked.gif'/>";  
+status=true;  
+}  
+
+if(password.length<6){  
+document.getElementById("passwordloc").innerHTML=  
+"    <img src='http://camswork.com/wp-content/uploads/2018/04/wrong.gif'/> ";
+document.getElementById("passwordloc1").innerHTML= "<b>Password must be at least 6 char long</b>"  
+status=false;  
+}else{  
+document.getElementById("passwordloc").innerHTML=" <img  src='checked.gif'/>";  
+}  
+return status;  
+}  
+   
+   
+
+function validate1(){  
+var name=document.f2.username.value;  
+var password=document.f2.password.value;
+var ck_email= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var email=document.f2.email.value;
+var status=false;  
+//  var x=document.f2.email.value;  
+// var atposition=email.indexOf("@");  
+// var dotposition=email.lastIndexOf(".");  
+// if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+//   // alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+//   // return false;  
+//   }  
+  
+if(name.length<1){  
+  // document.f2.username.focus();
+  // document.getElementById("username").focus();
+  document.getElementById("name").innerHTML=  
+"   <img  src='http://camswork.com/wp-content/uploads/2018/04/wrong.gif '/>"; 
+document.getElementById("name1").innerHTML= "<b>Please Enter your Name</b>";  
+status=false;  
+}else{  
+document.getElementById("name").innerHTML=" <img src='./checked.gif'/>";  
+status=true;  
+}  
+
+if(password.length<6){  
+document.getElementById("password").innerHTML=  
+"    <img src='http://camswork.com/wp-content/uploads/2018/04/wrong.gif'/> ";
+document.getElementById("password1").innerHTML= "<b>Password must be at least 6 char long</b>"  
+status=false;  
+}else{  
+document.getElementById("password").innerHTML=" <img  src='checked.gif'/>";  
+}  
+
+if(validEmail(email)==false & email.length<1)
+{
+  // alert("chk email");
+  document.getElementById("email1").innerHTML= "<img src='http://camswork.com/wp-content/uploads/2018/04/wrong.gif'/> ";
+document.getElementById("email2").innerHTML= "<b>Check Email</b>"  
+status=false;
+}else{
+  document.getElementById("email1").innerHTML=" <img  src='checked.gif'/>";  
+}
+
+function validEmail(email1){
+  return ck_email.test(email1)
+}
+
+return status;  
+}  
+
+  
+</script>
+
+
+<body >
+
+
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-5 col-lg-offset-3">
+<div class="well" style="background-color: white;border-color: #b5e7a0;">
+<div class="btn-group" id="bgroup">
+<button class="btn btn-default abc active" style="border-color: #b5e7a0;" id="btn1" onclick="$('#signin').hide(); $('#login').show(); myButtonGroup()">Login</button>
+<button class="btn btn-default abc" id="btn2" style="border-color: #b5e7a0;" onclick="$('#login').hide(); $('#signin').show(); myButtonGroup()">Sign-Up</button>
+</div>
+<div class="well abc1" id="login" style="background-color: white;border-color: white;">
+<form  action="/login" method="post" name="f1" onsubmit="return validate()" >  
+<table class="margin" >
+<div class="form-group margin">
+      
+<% if (typeof errors != 'undefined' && errors) { %>
+        <p class="error alert alert-danger"><%= errors %></p>
+<% } %>
+
+ <!-- <i style="z-index: 1 ; margin:10px 10px ;position:absolute;" class="fa fa-user" aria-hidden="true"></i> -->
+ <tr><td> <input type="text" name=username class="form-control " id="usr" placeholder="&#xF007;   Username "style="font-family: FontAwesome, Arial; font-style: normal " >
+ </td><td><span id="nameloc"></span></td></tr> 
+ <tr><td><span id="nameloc1"></span></td></tr>
+
+</div>
+  </table>
+  
+
+<table class="margin">
+<div class="form-group margin">
+<tr><td><input type="password" name=password class="form-control " id="pwd" placeholder="&#xf084;  Password" style="font-family: FontAwesome, Arial; font-style: normal">
+</td><td> <span id="passwordloc"></span></td></tr>  
+<tr><td><span id="passwordloc1"></span></td></tr>
+</div>
+</table>
+
+
+    
+<div class="form-group ">
+<input type="checkbox" onclick="myFunction()"><b>Show Password</b>
+<button type="link" class="btn btn-link" style="width:150%;">Forget Password?</button>
+</div>
+<div class="form-group">
+<button class="btn Button1 general">Submit</button>
+</div>  
+</form>
+<br>
+  
+  <div class="row">
+  <hr  style="width:160px;position:absolute;left:55px;">
+  <label class=" general" style="position:absolute;left:245px;">OR</label>
+  <hr  style="width:160px;position:absolute;left: 295px;">
+  </div>
+  <br><br><br>
+  <button type="submit" class="btn btn-danger Button1 general">Google</button>
+  <br><br>
+  <button type="submit" class="btn btn-info Button1 general">Facebook</button>
+  <br><br>
+  </div>
+
+  <!-- <% if (typeof notMatching != 'undefined' && notMatching) { %>
+    
+    <div class="alert alert-danger"><%= notMatching  %></div>
+    <% } %> -->
+
+
+    
+    
+
+        <div class="well abc1" id="signin" style="display: none; background-color: white;border-color: white;">
+        <form action="/register" method="post" name="f2"  onsubmit="return validate1()" >
+          
+          <table class="margin">
+          <div class="form-group">
+
+            
+
+  
+            
+                  <label for="usr">Username:</label>
+                  <tr><td> <input type="text" class="form-control " id="username" placeholder="Enter Username" name="username">
+            </td><td><span id="name"></span></td></tr>  
+                <tr><td><span id ="name1"></span></td></tr>
+
+                </div>
+            </table>
+               
+            <table class="margin">
+                <div class="form-group">
+                    <label for="em">Email</label>
+                <tr><td>  <input type="email" class="form-control " id="email" placeholder="Enter Email" name="email" >
+                  </td><td><span id="email1"></span></td></tr>  
+                  <tr><td><span id ="email2"></span></td></tr>
+                  </div>
+              </table>
+            
+            
+                    <table class="margin">
+                    <div class="form-group">
+                   <label for="pwd1">Password:</label>
+                 <tr> <td> <input type="password" class="form-control" id="pwd1" placeholder="Enter Password" name="password" >
+                    </td><td><span id="password"></span></td></tr>  
+                    <tr><td><span id ="password1"></span></td></tr>
+                   
+                    </div>
+                  </table>
+                  
+                  <div class="form-group">
+                  <input type="checkbox" onclick="MyFunction()"><b>Show Password</b>
+                  <button type="link" class="btn btn-link" style="width:170%;">Forget Password?</button>
+                  </div>
+                  <div class="form-group">
+                  <button id="submit" class="btn Button1 general">Submit</button>
+                  <span id="message"></span>
+                </div>
+      </form>
+
+         <br>
+         <div class="row">
+         <hr  style="width:160px;position:absolute;left:55px;">
+         <label class=" general" style="position:absolute;left:245px;">OR</label>
+         <hr  style="width:160px;position:absolute;left: 295px;">
+         </div>
+        <br><br><br>
+        <button type="submit" class="btn btn-danger Button1 general">Google</button>
+        <br><br>
+        <button type="submit" class="btn btn-info Button1 general">Facebook</button>
+        <br><br>
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div> 
+
+
+       
+</body>
+
+</html>
+<script>
+  $(document).ready(function(){
+      var from,to,subject,text;
+      $("#submit").click(function(){     
+          to=$("#email").val();     
+          $("#message").text("Sending E-mail...Please wait");
+          $.get("http://localhost:3001/register",{to:to},function(data){
+          if(data=="sent")
+          {
+              $("#message").empty().html("<p>Email is been sent at "+to+" . Please check inbox !</p>");
+          }
+  
+  });
+      });
+  });
+  </script>

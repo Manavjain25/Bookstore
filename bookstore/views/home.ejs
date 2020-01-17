@@ -1,0 +1,221 @@
+<%- include('partials/header.ejs', {data: data,count:count}); %>
+
+<style>
+    .service
+	{
+	color:blue;
+	font-size: 17px;
+	}
+	.fa-bookmark,.fa-book,.fa-video-camera,.fa-line-chart,.fa-credit-card{
+		color:red;
+	}
+	.well{
+		border-color: whitesmoke;
+        border-width: 1px;
+		background-color: whitesmoke;
+	}
+	p{
+		font-size: 15px;
+		color:#555;
+		font-weight: bold;
+	}
+    body{
+        background-color: whitesmoke;
+    }
+    .display-image{
+        height:auto;
+        width:auto;
+    }
+</style>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 100px;z-index: -1;">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>  
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+<div class="item active">
+<img class="display-image" src="https://n3.sdlcdn.com/imgs/h/z/c/MS_CompetitiveExamsSchool_Books_CSF_6_12_18-32562.jpg" alt="Mumbai" >
+</div>  
+<div class="item">
+<img class="display-image" src="https://n1.sdlcdn.com/imgs/i/m/q/Pearson-8f0c4.jpg" alt="Chicago" >
+</div>
+<div class="item">
+<img class="display-image" src="https://n3.sdlcdn.com/imgs/h/s/b/Books_CSF1-83389.jpg" alt="New York">
+</div>
+</div>
+<!-- Left and right controls -->
+<a class="left carousel-control display-image" href="#myCarousel" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control display-image" href="#myCarousel" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>   
+</div>
+
+<div class="well display-image" >
+   <div class="container">
+   <h2>Services</h2>
+   <hr style="border-color: yellow;float:left;border-width: 3px; margin-top: 5px;">
+   </div>
+   <div class="container">
+        <div class="row">
+            <label class="service col-sm-4">
+                <i class="fa fa-bookmark fa-lg" aria-hidden="true"></i> Engineering Books
+                <p style="font-size:15px;color:#555;font-weight: bold;">All types of Books of various Engineering Branches are available here.</p> 
+            </label>
+            <label class="service col-sm-4">
+                <i class="fa fa-book fa-lg" aria-hidden="true"></i> Free e-Books
+                <p style="font-size:15px;color:#555;font-weight: bold;">Customers can read & also download free available e-books from our site for their reference.</p> 
+            </label>
+            <label class="service col-sm-4">
+                <i class="fa fa-video-camera fa-lg" aria-hidden="true"></i> Online Courses
+                <p style="font-size:15px;color:#555;font-weight: bold;">Customers can watch various free online tutorials available related to various Engineering subjects and get knowledge.</p> 
+            </label>
+            <label class="service col-sm-4">
+                <i class="fa fa fa-credit-card fa-lg" aria-hidden="true"></i> Purchase & Sell Old Books
+                <p style="font-size:15px;color:#555;font-weight: bold;">Customers can sell their preused books and also can purchase old books of various Engineering Subjects.</p> 
+            </label>
+            <label class="service col-sm-4">
+                <i class="fa fa fa-line-chart fa-lg" aria-hidden="true"></i> Free Study Guidance
+                <p style="font-size:15px;color:#555;font-weight: bold;">Free Counselling and various study tips are also available.</p> </label>
+        </div>
+    </div>
+</div>
+<div class="well display-image">
+    <div class="container">
+       <h2>About Us</h2>
+       <hr style="border-color: yellow;float:left;border-width: 3px; margin-top: 5px;">
+    </div>
+    <div class="container">
+    <p class="text-justify">
+{pages} is an independent full service bookstore located in downtown Manhattan Beach, California.<br><br>
+{pages} was founded in 2010 by three local, passionate bibliophiles with the goal of bringing a quality independent
+bookstore to the South Bay.<br><br>
+Co-founders Patty, Margot and Linda were joined in 2015 by Sunni who helped {pages} establish itself as a premiere bookfair company in Southern California.<br><br>  
+Today, {pages} a bookstore is the place for book lovers of all ages, where reading, meeting and discussing books is a way of life. We offer a carefully curated selection of new fiction, non-fiction, children’s, cooking, surf, coffee table books and bestsellers.<br><br>
+We are proud of our knowledgeable and caring staff who can match any reader with the perfect book.
+We regularly host author events and book signings, weekly story times, and four monthly book clubs.<br><br>
+{pages} provides complimentary gift wrap and gift cards are available for that hard to select for reader. 
+{pages} a bookfair provides over 20 bookfairs annually working with each school to create the perfect celebration of books and literature while supporting school fundraising goals.<br><br>
+    </p>	
+    </div>
+<div class="features-sec" style="margin-top: 200px">
+        <div class="container jumbotron">
+        <ul>
+            <li>
+                <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                <h3>SAFE SHOPPING</h3>
+                <h5>Safe Shopping Guarantee</h5>
+                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+            </li>
+            <li>
+                <span class="icon return"><i class="fa fa-reply-all" aria-hidden="true"></i></span>
+                <h3>30- DAY RETURN</h3>
+                <h5>Moneyback guarantee</h5>
+                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+            </li>
+            <li>
+                <span class="icon chat"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                <h3>24/7 SUPPORT</h3>
+                <h5>online Consultations</h5>
+                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<footer style="margin-top: 100px" id="section1">
+        <div class="container">
+                <h2>Contact Us</h2>
+                <hr style="border-color: yellow;float:left;border-width: 3px; margin-top: 5px;">
+        </div>  
+        <br> 
+        <div class="container">    
+            <div class="row">
+            <div class="col-md-4">
+            <div class="address">
+                <h4>Our Address</h4>
+                <h6>The BookStore Theme, 4th Store
+                Beside that building, Mumbai</h6>
+                <h6>Call : 800 1234 5678</h6>
+                <h6>Email : info@bookstore.com</h6>
+            </div>
+            <div class="timing">
+                <h4>Timing</h4>
+                <h6>Mon - Fri: 7am - 10pm</h6>
+                <h6>​​Saturday: 8am - 10pm</h6>
+                <h6>​Sunday: 8am - 11pm</h6>
+            </div>
+            </div>
+            <div class="col-md-3">
+            <div class="navigation">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-conditions.html">Terms</a></li>
+                    <li><a href="products.html">Products</a></li>
+                </ul>
+            </div>
+            <div class="navigation">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="">Shipping & Returns</a></li>
+                    <li><a href="privacy-policy.html">Privacy</a></li>
+                    <li><a href="faq.html">FAQ’s</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="form">
+                <h3>Quick Contact us</h3>
+                <h6>We are now offering some good discount 
+                    on selected books go and shop them</h6>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input placeholder="Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea placeholder="Messege"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-info ">Alright, Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copy-right">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>(C) 2019. All Rights Reserved</h5>
+            </div>
+            <div class="col-md-6">
+                <div class="share align-middle">
+                    <span class="fb"><i class="fa fa-facebook-official"></i></span>
+                    <span class="instagram"><i class="fa fa-instagram"></i></span>
+                    <span class="twitter"><i class="fa fa-twitter"></i></span>
+                    <span class="pinterest"><i class="fa fa-pinterest"></i></span>
+                    <span class="google"><i class="fa fa-google-plus"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+<% include partials/footer %>

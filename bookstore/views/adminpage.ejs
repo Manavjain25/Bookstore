@@ -1,0 +1,53 @@
+<head>
+    <!-- Make site responsive on mobile/tablet -->
+   <meta name="viewport"  content="width=device-width, initial-scale=1">
+    <title>Demo App</title>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel ="stylesheet" href="/stylesheets/style3.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+  
+    <style>
+    @media(max-width:991px){
+    .navbar-toggle{display:block;}
+    .collapse{display:none;}
+    }
+    </style>
+          
+</head>
+
+
+<body>
+
+<div class="container-fluid">
+    <div class="row" >
+    <% for (i=0;i<count;i++)   {%>
+   
+      <div class="col-lg-3 col-sm-6" style="padding-bottom: 40px">
+      <div class="well "> 
+      <div class="row"><label class="book-compress col-sm-10" id="demo"><label>Bookname: </label><%= result[i].bookname %></label></div>
+      <div class="row"><label class="row book-compress col-sm-10">Price :<%= result[i].price %> Rs/-</label></div>
+      <div class="row"><label class="row book-compress col-sm-10">Email :<%= result[i].emailid %></label></div>
+      <div class="row"><label class="row book-compress col-sm-10">Phoneno :<%= result[i].Phoneno %></label></div>
+      <div class="row col-sm-10">
+      <img  class="image-compress img-thumbnail" src="<%= result[i].bookimg  %>">
+      </div>
+          
+       <div class="row"> 
+       <form action="/accept" method="POST" >
+       <input type="submit" class="button-compress btn btn-sm btn-primary col-sm-4" name="submit"    value="Accepted" >
+       </form>
+       </div>
+       </div>
+    </div>
+    <%  } %>
+    </div>
+  
+</div>   
+</body>
